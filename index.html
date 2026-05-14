@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CivicSphere | Empowering Civic Engagement</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
+  <meta name="description" content="CivicSphere - Empowering citizens to engage, report issues, and improve their communities through civic action.">
+</head>
+<body>
+  <div class="loading-screen" id="loadingScreen">
+    <div class="loading-icon">
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+    </div>
+    <p>Loading CivicSphere...</p>
+  </div>
+
+  <header class="header" id="header">
+    <div class="container">
+      <div class="header-inner">
+        <a href="#" class="logo">
+          <div class="logo-icon">
+            <span class="logo-circle"></span>
+            <span class="logo-dot"></span>
+          </div>
+          <span>CivicSphere</span>
+        </a>
+        <nav class="main-nav">
+          <ul class="nav-list">
+            <li><a href="#report" class="nav-link">Report Issue</a></li>
+            <li><a href="#resources" class="nav-link">Resources</a></li>
+            <li><a href="#events" class="nav-link">Events</a></li>
+            <li><a href="#dashboard" class="nav-link">Dashboard</a></li>
+          </ul>
+        </nav>
+        <div class="header-actions">
+          <button class="a11y-toggle btn-icon" id="a11yToggle" aria-label="Accessibility options">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 8v4"></path><path d="M12 16h.01"></path></svg>
+          </button>
+          <button class="btn btn-secondary">Sign In</button>
+          <button class="btn btn-primary">Get Started</button>
+          <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <nav>
+      <ul>
+        <li><a href="#report">Report Issue</a></li>
+        <li><a href="#resources">Resources</a></li>
+        <li><a href="#events">Events</a></li>
+        <li><a href="#dashboard">Dashboard</a></li>
+      </ul>
+    </nav>
+    <div class="mobile-menu-footer">
+      <button class="btn btn-outline">Sign In</button>
+      <button class="btn btn-primary">Get Started</button>
+    </div>
+  </div>
+
+  <div class="a11y-panel" id="a11yPanel">
+    <div class="a11y-panel-header">
+      <h4>Accessibility Options</h4>
+      <button class="btn-close" id="a11yClose" aria-label="Close accessibility panel">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+    </div>
+    <div class="a11y-controls">
+      <div class="a11y-option">
+        <label for="fontSize">Text Size</label>
+        <div class="a11y-buttons">
+          <button class="a11y-btn" data-action="decrease-font">A-</button>
+          <button class="a11y-btn" data-action="reset-font">Reset</button>
+          <button class="a11y-btn" data-action="increase-font">A+</button>
+        </div>
+      </div>
+      <div class="a11y-option">
+        <label for="contrastMode">Contrast Mode</label>
+        <div class="a11y-toggle-switch">
+          <input type="checkbox" id="contrastMode">
+          <span class="toggle-slider"></span>
+        </div>
+      </div>
+      <div class="a11y-option">
+        <label for="reduceMotion">Reduce Motion</label>
+        <div class="a11y-toggle-switch">
+          <input type="checkbox" id="reduceMotion">
+          <span class="toggle-slider"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <h1>Making Civic Engagement Accessible for Everyone</h1>
+          <p>Report local issues, track their progress, and see real impact in your community through collaborative civic action.</p>
+          <div class="hero-actions">
+            <button class="btn btn-primary btn-lg">Report an Issue</button>
+            <button class="btn btn-outline btn-lg">Explore Resources</button>
+          </div>
+          <div class="stats">
+            <div class="stat">
+              <span class="stat-number" data-count="3245">0</span>
+              <span class="stat-label">Issues Resolved</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number" data-count="15632">0</span>
+              <span class="stat-label">Active Users</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number" data-count="427">0</span>
+              <span class="stat-label">Communities</span>
+            </div>
+          </div>
+        </div>
+        <div class="hero-image">
+          <img src="https://images.pexels.com/photos/3184432/pexels-photo-3184432.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Community members collaborating" class="main-image">
+          <div class="floating-card">
+            <div class="card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21v-13a3 3 0 0 1 3-3h10a3 3 0 0 1 3 3v6a3 3 0 0 1-3 3h-9l-4 4"></path><line x1="12" y1="11" x2="16" y2="11"></line><line x1="8" y1="11" x2="8.01" y2="11"></line></svg>
+            </div>
+            <div class="card-content">
+              <p>Latest Report: Park cleanup needed at Riverside</p>
+              <div class="card-meta">
+                <span>2 hours ago</span>
+                <span class="status in-progress">In Progress</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="container">
+        <h2 class="section-title">How CivicSphere Works</h2>
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon blue">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M8 14s1.5 2 4 2 4-2 4-2"></path><line x1="9" y1="9" x2="9.01" y2="9"></line><line x1="15" y1="9" x2="15.01" y2="9"></line></svg>
+            </div>
+            <h3>Report Issues</h3>
+            <p>Easily report community issues with our one-click system. Add photos, location, and details to help officials respond efficiently.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon green">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>
+            </div>
+            <h3>Track Progress</h3>
+            <p>Monitor real-time updates as your reported issues move through resolution stages, from submission to completion.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon yellow">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+            </div>
+            <h3>Connect</h3>
+            <p>Join with neighbors and community organizations working toward common goals and celebrate achievements together.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon blue">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+            </div>
+            <h3>Earn Impact</h3>
+            <p>Gain recognition for your community contributions through our achievement system and impact visualization tools.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="report-issue" id="report">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Report an Issue</h2>
+          <p class="section-subtitle">Quickly submit issues in your community with our easy-to-use reporting tool</p>
+        </div>
+        <div class="report-container">
+          <div class="report-map" id="issueMap">
+            <div class="map-placeholder">
+              <div class="map-overlay">
+                <p>Interactive map will load here</p>
+                <button class="btn btn-secondary btn-sm">Enable Location</button>
+              </div>
+            </div>
+          </div>
+          <form class="report-form" id="reportForm">
+            <div class="form-group">
+              <label for="issueType">Issue Type</label>
+              <select id="issueType" class="form-control" required>
+                <option value="" disabled selected>Select an issue type</option>
+                <option value="infrastructure">Infrastructure Damage</option>
+                <option value="safety">Public Safety</option>
+                <option value="sanitation">Sanitation</option>
+                <option value="environment">Environmental</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="issueTitle">Title</label>
+              <input type="text" id="issueTitle" class="form-control" placeholder="Brief title for the issue" required>
+            </div>
+            <div class="form-group">
+              <label for="issueDescription">Description</label>
+              <textarea id="issueDescription" class="form-control" rows="3" placeholder="Describe the issue in detail" required></textarea>
+            </div>
+            <div class="form-group">
+              <label for="issueLocation">Location</label>
+              <div class="location-input">
+                <input type="text" id="issueLocation" class="form-control" placeholder="Address or location description" required>
+                <button type="button" class="btn-icon" id="getCurrentLocation">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><point cx="12" cy="12" r="1"></point></svg>
+                </button>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="issuePhotos">Photos</label>
+              <div class="photo-upload">
+                <label for="photoInput" class="photo-upload-label">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+                  <span>Click to add photos</span>
+                </label>
+                <input type="file" id="photoInput" accept="image/*" multiple class="photo-input">
+                <div class="photo-preview" id="photoPreview"></div>
+              </div>
+            </div>
+            <div class="form-actions">
+              <button type="button" class="btn btn-outline">Cancel</button>
+              <button type="submit" class="btn btn-primary">Submit Report</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="resource-hub" id="resources">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Resource Hub</h2>
+          <p class="section-subtitle">Educational resources to help you understand and engage with civic processes</p>
+        </div>
+        <div class="resource-filter">
+          <button class="filter-btn active" data-filter="all">All Resources</button>
+          <button class="filter-btn" data-filter="guides">Guides</button>
+          <button class="filter-btn" data-filter="videos">Videos</button>
+          <button class="filter-btn" data-filter="documents">Documents</button>
+        </div>
+        <div class="resources-grid">
+          <div class="resource-card" data-category="guides">
+            <div class="resource-card-image">
+              <img src="https://images.pexels.com/photos/6646918/pexels-photo-6646918.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Understanding Local Government">
+            </div>
+            <div class="resource-card-content">
+              <span class="resource-tag">Guide</span>
+              <h3>Understanding Local Government</h3>
+              <p>Learn how local government works and how decisions are made in your community.</p>
+              <a href="#" class="resource-link">Read Guide</a>
+            </div>
+          </div>
+          <div class="resource-card" data-category="videos">
+            <div class="resource-card-image">
+              <img src="https://images.pexels.com/photos/7516347/pexels-photo-7516347.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Effective Community Organizing">
+            </div>
+            <div class="resource-card-content">
+              <span class="resource-tag">Video</span>
+              <h3>Effective Community Organizing</h3>
+              <p>Watch this comprehensive guide to organizing your community for positive change.</p>
+              <a href="#" class="resource-link">Watch Video</a>
+            </div>
+          </div>
+          <div class="resource-card" data-category="documents">
+            <div class="resource-card-image">
+              <img src="https://images.pexels.com/photos/6629459/pexels-photo-6629459.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Policy Proposal Template">
+            </div>
+            <div class="resource-card-content">
+              <span class="resource-tag">Document</span>
+              <h3>Policy Proposal Template</h3>
+              <p>Download this template to create effective policy proposals for your local government.</p>
+              <a href="#" class="resource-link">Download</a>
+            </div>
+          </div>
+          <div class="resource-card" data-category="guides">
+            <div class="resource-card-image">
+              <img src="https://images.pexels.com/photos/7432099/pexels-photo-7432099.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Civic Engagement 101">
+            </div>
+            <div class="resource-card-content">
+              <span class="resource-tag">Guide</span>
+              <h3>Civic Engagement 101</h3>
+              <p>Your introduction to meaningful civic participation and making your voice heard.</p>
+              <a href="#" class="resource-link">Read Guide</a>
+            </div>
+          </div>
+        </div>
+        <div class="resource-actions">
+          <button class="btn btn-secondary">View All Resources</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="events-calendar" id="events">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Community Events</h2>
+          <p class="section-subtitle">Discover upcoming events and opportunities to engage with your community</p>
+        </div>
+        <div class="calendar-nav">
+          <button class="btn-icon calendar-nav-prev">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          <h3 class="calendar-month">September 2025</h3>
+          <button class="btn-icon calendar-nav-next">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+        </div>
+        <div class="events-list">
+          <div class="event-card">
+            <div class="event-date">
+              <span class="event-day">15</span>
+              <span class="event-month">SEP</span>
+            </div>
+            <div class="event-details">
+              <h4 class="event-title">Town Hall Meeting: Infrastructure</h4>
+              <p class="event-description">Join the discussion about upcoming infrastructure projects in your neighborhood.</p>
+              <div class="event-meta">
+                <span class="event-time">6:00 PM - 8:00 PM</span>
+                <span class="event-location">City Hall, Room 201</span>
+              </div>
+            </div>
+            <div class="event-actions">
+              <button class="btn btn-outline btn-sm">Add to Calendar</button>
+              <button class="btn btn-primary btn-sm">RSVP</button>
+            </div>
+          </div>
+          <div class="event-card">
+            <div class="event-date">
+              <span class="event-day">18</span>
+              <span class="event-month">SEP</span>
+            </div>
+            <div class="event-details">
+              <h4 class="event-title">Community Clean-up: Riverside Park</h4>
+              <p class="event-description">Volunteer to help clean up and beautify our local park. Equipment provided.</p>
+              <div class="event-meta">
+                <span class="event-time">9:00 AM - 12:00 PM</span>
+                <span class="event-location">Riverside Park, Main Entrance</span>
+              </div>
+            </div>
+            <div class="event-actions">
+              <button class="btn btn-outline btn-sm">Add to Calendar</button>
+              <button class="btn btn-primary btn-sm">RSVP</button>
+            </div>
+          </div>
+          <div class="event-card">
+            <div class="event-date">
+              <span class="event-day">22</span>
+              <span class="event-month">SEP</span>
+            </div>
+            <div class="event-details">
+              <h4 class="event-title">Workshop: Effective Advocacy</h4>
+              <p class="event-description">Learn strategies for advocating effectively for policy changes in your community.</p>
+              <div class="event-meta">
+                <span class="event-time">1:00 PM - 3:00 PM</span>
+                <span class="event-location">Community Center</span>
+              </div>
+            </div>
+            <div class="event-actions">
+              <button class="btn btn-outline btn-sm">Add to Calendar</button>
+              <button class="btn btn-primary btn-sm">RSVP</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="user-dashboard" id="dashboard">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Your Civic Dashboard</h2>
+          <p class="section-subtitle">Track your impact and monitor the progress of community issues</p>
+        </div>
+        <div class="dashboard-preview">
+          <div class="dashboard-card impact-card">
+            <h3 class="dashboard-card-title">Your Impact</h3>
+            <div class="impact-meter">
+              <svg viewBox="0 0 36 36" class="impact-chart">
+                <path class="impact-circle-bg"
+                  d="M18 2.0845
+                    a 15.9155 15.9155 0 0 1 0 31.831
+                    a 15.9155 15.9155 0 0 1 0 -31.831"
+                />
+                <path class="impact-circle"
+                  stroke-dasharray="75, 100"
+                  d="M18 2.0845
+                    a 15.9155 15.9155 0 0 1 0 31.831
+                    a 15.9155 15.9155 0 0 1 0 -31.831"
+                />
+                <text x="18" y="20.35" class="impact-percentage">75%</text>
+              </svg>
+              <div class="impact-level">
+                <h4>Community Champion</h4>
+                <p>Next level: 25 points needed</p>
+              </div>
+            </div>
+            <div class="impact-stats">
+              <div class="impact-stat">
+                <span class="impact-number">12</span>
+                <span class="impact-label">Issues Reported</span>
+              </div>
+              <div class="impact-stat">
+                <span class="impact-number">8</span>
+                <span class="impact-label">Events Attended</span>
+              </div>
+              <div class="impact-stat">
+                <span class="impact-number">5</span>
+                <span class="impact-label">Achievements</span>
+              </div>
+            </div>
+          </div>
+          <div class="dashboard-card issues-card">
+            <h3 class="dashboard-card-title">Recent Issues</h3>
+            <div class="issues-list">
+              <div class="issue-item">
+                <div class="issue-status completed"></div>
+                <div class="issue-details">
+                  <h4>Broken Street Light</h4>
+                  <p>Oak Street & Maple Avenue</p>
+                </div>
+                <div class="issue-meta">
+                  <span class="issue-date">Sep 5</span>
+                  <span class="issue-resolution">Resolved</span>
+                </div>
+              </div>
+              <div class="issue-item">
+                <div class="issue-status in-progress"></div>
+                <div class="issue-details">
+                  <h4>Pothole Repair Needed</h4>
+                  <p>123 Main Street</p>
+                </div>
+                <div class="issue-meta">
+                  <span class="issue-date">Sep 10</span>
+                  <span class="issue-resolution">In Progress</span>
+                </div>
+              </div>
+              <div class="issue-item">
+                <div class="issue-status pending"></div>
+                <div class="issue-details">
+                  <h4>Park Bench Damaged</h4>
+                  <p>Riverside Park, North Entrance</p>
+                </div>
+                <div class="issue-meta">
+                  <span class="issue-date">Sep 14</span>
+                  <span class="issue-resolution">Under Review</span>
+                </div>
+              </div>
+            </div>
+            <a href="#" class="view-all">View All Issues</a>
+          </div>
+          <div class="dashboard-card achievements-card">
+            <h3 class="dashboard-card-title">Achievements</h3>
+            <div class="achievements-grid">
+              <div class="achievement earned">
+                <div class="achievement-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"></path><line x1="16" y1="8" x2="2" y2="22"></line><line x1="17.5" y1="15" x2="9" y2="15"></line></svg>
+                </div>
+                <div class="achievement-info">
+                  <h4>First Report</h4>
+                  <p>Submitted your first issue report</p>
+                </div>
+              </div>
+              <div class="achievement earned">
+                <div class="achievement-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path></svg>
+                </div>
+                <div class="achievement-info">
+                  <h4>Location Pioneer</h4>
+                  <p>First to report in your neighborhood</p>
+                </div>
+              </div>
+              <div class="achievement earned">
+                <div class="achievement-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                </div>
+                <div class="achievement-info">
+                  <h4>Civic Connector</h4>
+                  <p>Invited 5 friends to the platform</p>
+                </div>
+              </div>
+              <div class="achievement">
+                <div class="achievement-icon locked">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+                </div>
+                <div class="achievement-info">
+                  <h4>Civic Champion</h4>
+                  <p>Reach 25 resolved issues</p>
+                </div>
+              </div>
+            </div>
+            <a href="#" class="view-all">View All Achievements</a>
+          </div>
+        </div>
+        <div class="dashboard-cta">
+          <p>Track your personal impact, monitor reported issues, and earn recognition for your civic engagement.</p>
+          <button class="btn btn-primary">Create Your Account</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-content">
+          <h2>Ready to make a difference in your community?</h2>
+          <p>Join thousands of engaged citizens who are creating positive change through civic action.</p>
+          <div class="cta-actions">
+            <button class="btn btn-primary btn-lg">Get Started</button>
+            <button class="btn btn-outline btn-lg">Learn More</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <a href="#" class="logo">
+            <div class="logo-icon">
+              <span class="logo-circle"></span>
+              <span class="logo-dot"></span>
+            </div>
+            <span>CivicSphere</span>
+          </a>
+          <p class="footer-tagline">Empowering civic engagement for stronger communities</p>
+          <div class="social-links">
+            <a href="#" class="social-link">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+            </a>
+            <a href="#" class="social-link">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+            </a>
+            <a href="#" class="social-link">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+            <a href="#" class="social-link">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <div class="footer-column">
+            <h4>Platform</h4>
+            <ul>
+              <li><a href="#">How It Works</a></li>
+              <li><a href="#">Features</a></li>
+              <li><a href="#">Success Stories</a></li>
+              <li><a href="#">Communities</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>Resources</h4>
+            <ul>
+              <li><a href="#">Guides</a></li>
+              <li><a href="#">Educational Materials</a></li>
+              <li><a href="#">Community Toolkit</a></li>
+              <li><a href="#">FAQ</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>Company</h4>
+            <ul>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Our Mission</a></li>
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>Legal</h4>
+            <ul>
+              <li><a href="#">Terms of Service</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Data Protection</a></li>
+              <li><a href="#">Accessibility</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 CivicSphere. All rights reserved.</p>
+        <div class="footer-meta">
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+          <a href="#">Cookies</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
